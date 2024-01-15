@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const userRoutes = require("../routers/user.route");
-// const authRoutes = require("../routers/auth.route");
-// const blogRoutes = require("../routers/blog.route");
+const authRoutes = require("../routers/auth.route");
+const blogRoutes = require("../routers/blog.route");
 const categoryRoutes = require("../routers/categories.route");
 const path = require('path');
 
-// router.use("/auth", authRoutes)
+router.use("/auth", authRoutes)
 router.use("/user", userRoutes);
-// router.use("/blog", blogRoutes);
+router.use("/blog", blogRoutes);
 router.use("/category", categoryRoutes);
 
 router.get('/photo/:fileName', (req, res) => {
